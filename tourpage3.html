@@ -18,23 +18,13 @@
         @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@1,700&display=swap');
 
 
-        #header {
-            width: 80%;
-            margin-left: 10%;
-        }
-
-        #info {
-            width: 100%;
-            height: 100%;
-        }
-
         .article1 {
             min-width: 786px;
             height: 500px;
             overflow: hidden;
+
             margin-bottom: 50px;
             position: relative;
-            font-family: 'Playfair Display';
         }
 
         video {
@@ -48,11 +38,23 @@
             font-family: 'Spectral';
             text-align: center;
             margin: -20px;
+
+            /* 스마트폰에서 예쁘게 줄어들고 인터넷창 확대축소 틀어지기 vw, px, % 다해봐도 합의점을 못찾겠다*/
             font-size: 5vw;
-            letter-spacing:-0.5vw;
+            letter-spacing: -0.5vw;
+            line-height: 8vw;
+
+            /* font-size:70px;
+            letter-spacing: -8px; */
+            /* line-height:127px; */
+
+            /* 인터넷창 확대축소 예쁘게 되고 반응형 이상해지기 */
+            /* font-size:350%;
+            letter-spacing:-0.5vw; */
+            /* line-height:160%; */
+
             color: #ffffff;
             transform: skew(4deg, -4deg);
-            line-height: 8vw;
         }
 
         .video-text h1 span {
@@ -61,12 +63,8 @@
             -webkit-text-stroke-color: white;
         }
 
-        body {
-            position: relative;
-        }
-
         section {
-            height: 100vh;
+            height: 110vh;
             width: 100%;
             box-sizing: border-box;
             position: relative;
@@ -171,8 +169,11 @@
         }
 
         body {
+            margin: 0;
             background-color: black;
             color: #d7d7ce;
+            height: 15%;
+            position: relative;
         }
 
         #s1,
@@ -197,7 +198,7 @@
         #btn {
             background: url("images/top-image.png") no-repeat;
             background-size: 30px;
-            width: 60px;
+            width: 32px;
             height: 60px;
             cursor: pointer;
             border: 0;
@@ -207,7 +208,7 @@
         #btn:hover {
             background: url("images/top-trans.png") no-repeat;
             background-size: 30px;
-            width: 60px;
+            width: 32px;
             height: 60px;
             cursor: pointer;
             border: 0;
@@ -224,36 +225,35 @@
     <script>
 
         $(document).ready(function () {
-            // window.scrollTo({top:9999});
-            var maxY=$(document).height() - $(window).height();
-            // window.scrollTo({top:0});
+
+            var maxY = window.scrollY;
+            var maxY = $(document).height() - $(window).height();
+
             $("#btn").click(function () {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             })
 
             $(window).on("scroll", function () {
                 // 윈도우 스크롤 위치 구하기
-                var strInfo = window.scrollY;
-                // 스크롤 정보 출력
-                // console.log(typeof strInfo);
-                
-                console.log(maxY,strInfo);
+                var strInfo = window.pageYOffset;
 
-                if (strInfo > maxY*0.1 & strInfo <= maxY*0.3) {
+                console.log(maxY, strInfo);
+
+                if (strInfo > maxY * 0.1 & strInfo <= maxY * 0.3) {
                     $('#s1').addClass('active');
                     $('#s2').removeClass('active');
                     console.log("1번");
-                } else if (strInfo > maxY*0.3 && strInfo <= maxY*0.5) {
+                } else if (strInfo > maxY * 0.3 && strInfo <= maxY * 0.5) {
                     $('#s1').removeClass('active');
                     $('#s2').addClass('active');
                     $('#s3').removeClass('active');
                     console.log("2번");
-                } else if (strInfo > maxY*0.5 && strInfo <= maxY*0.7) {
+                } else if (strInfo > maxY * 0.5 && strInfo <= maxY * 0.7) {
                     $('#s2').removeClass('active');
                     $('#s3').addClass('active');
                     $('#s4').removeClass('active');
                     console.log("3번");
-                } else if (strInfo > maxY*0.7&&strInfo<=maxY*0.9) {
+                } else if (strInfo > maxY * 0.7 && strInfo <= maxY * 0.9) {
                     $('#s3').removeClass('active');
                     $('#s4').addClass('active');
                     console.log("4번");
@@ -271,7 +271,7 @@
         <div class="menubar">
             <h1>
                 <a id="logodefault" href="#">
-                    <img src="images/logo.jpg" style="margin-top:-20px;height:79px;">
+                    <img src="images/logo.jpg" style="margin-top:-20px;height:78px;">
                 </a>
             </h1>
             <ul class="nav">
@@ -340,13 +340,10 @@
         <div>
             <article>
                 <h1>1 day tour</h1>
-                <p>Right now you are reading content inside of a fixed-position child of a relatively-positioned
-                    transparent area.</p>
-                <p>You are hovering over the transparent area (the white tint background) which is displaying this
-                    content. This fixed child content has a colored background image with a blend mode which appears to
-                    modify the original background image you saw before hover.</p>
-                <p>If you keep scrolling down you will see a line. If you hover beneath that line you will be hovering
-                    over the next section and it will make this content disappear.</p>
+                <p>Welcome to Wine Garden! How about 1 day tour?</p>
+                <p>You can enjoy 1 day tour in our winery. We have fabulous sight-seeing course in the vineyard.</p>
+                <p>You can also pick up some grapes and even make wine on your own.</p>
+                <p>In the end of the day, you can bring a bottle of happiness with you.</p>
             </article>
         </div>
     </section>
@@ -354,12 +351,10 @@
         <div>
             <article>
                 <h1>Wine Tasting</h1>
-                <p>You are now reading the second section's fixed content with a green background. This is because you
-                    are hovering over the second section (the white tint background).</p>
-                <p>If you didn't move your mouse and scrolled to get here, you may have noticed that the hover event
-                    doesn't fire until scrolling has completely stopped. This is default browser behavior.</p>
-                <p>This means you can quickly scroll to the bottom of the page and it will skip the sections along the
-                    way.</p>
+                <p>We offer tasting experience at our very own premium wine bar. We have various kinds of wine in
+                    Winegarden.</p>
+                <p>Try our heavenly drops with your beloved ones.</p>
+                <p>We do have options for kids. So don't worry for young little company, enjoy your time.</p>
             </article>
         </div>
     </section>
@@ -367,8 +362,10 @@
         <div>
             <article>
                 <h1>Party room</h1>
-                <p>As you can see, the result is pretty amazing for not using any Javascript. This goes to show you that
-                    CSS can do some pretty crazy things.</p>
+                <p>I do not have much thoughts about party rooms. I'm running out of the ideas.</p>
+                <p>Get our special party ball room and throw a fabulous party with your friends.</p>
+                <p>we offer catering service.(Extra charge will be needed)</p>
+                <p>If you are with Winegarden's wine, everyday is party day.</p>
             </article>
         </div>
     </section>
@@ -376,10 +373,8 @@
         <div>
             <article>
                 <h1>Accommodation</h1>
-                <p>First off, you cant select this text because the "hover" section areas are sitting on top of it. This
-                    is because we need to hover event to make this work.</p>
-                <p>Secondly, this pen is useless if you aren't hovering over it, so you cant use this on a tablet or
-                    phone. Relying on hover is a terrible idea.</p>
+                <p>I'm tired. Just come and get a room.</p>
+                <p>Have a nice holiday with your beloved ones!</p>
             </article>
         </div>
     </section>
@@ -389,24 +384,23 @@
     <div class="section footer">
         <div class="wrapper"></div>
 
-            
-
-            <div class="comInfo">
-                <input type="button" id="btn">
-                <ul id="endBarList">
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">이용안내</a></i>
-                </ul>
-                <p>WINECELLAR | 서울특별시 마포구 백범로 23 | 대표자 : 이황박유 외 3인<br>
-                    W_KOREA | 대표이사 : 제임스 문 | 대표번호 : 070-1234-3456 | 팩스 : 02-1234-3456<br>
-                    신고번호 : 제 1110120호 | 개인정보보호책임자 : 장길동 <br>
-                    <span id="fontHeight"> ⓒ Copyright 2021 bitcamp. All rights reserved </span>
-                </p>
-            </div>
+        <div class="comInfo">
+            <input type="button" id="btn">
+            <ul id="endBarList">
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">이용안내</a></i>
+            </ul>
+            <p>WINECELLAR | 서울특별시 마포구 백범로 23 | 대표자 : 이황박유 외 3인<br>
+                W_KOREA | 대표이사 : 제임스 문 | 대표번호 : 070-1234-3456 | 팩스 : 02-1234-3456<br>
+                신고번호 : 제 1110120호 | 개인정보보호책임자 : 장길동 <br>
+                <span id="fontHeight"> ⓒ Copyright 2021 bitcamp. All rights reserved </span>
+            </p>
         </div>
     </div>
+    </div>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
     <script>
         $(".menubar").hover(function () {//메뉴바에 hover발생시 서브메뉴 슬라이드
             $(".subMenu").stop().slideDown(400);
