@@ -1,0 +1,63 @@
+.step2_wrap {
+    margin: 0;
+    padding: 40px 0;
+    width: 100%;
+    min-width: 800px;
+    text-align: center;
+}
+
+.step2_wrap div.step2{
+    display: inline-block;
+}
+
+.step2_wrap div.step2 div.title{
+    margin-top: 50px;
+    color: white;
+}
+
+.step2_wrap div.step2 hr{
+    margin: 20px auto 30px;
+    border-bottom: 2px solid #cc3423 !important;
+    width: 80px;
+    font-weight: normal;
+    border: none;
+}
+.step2_wrap div.step2 table{
+    display: inline;
+    border-spacing: 0;
+    border-collapse: separate;
+    color: white;
+
+}
+.step2_wrap div.step2 table img {
+    padding: 5px;
+    width: 100px;
+    height: 130px;
+}
+.rightborder {
+    border-right: 1px solid wheat;
+}
+.name {
+    padding: 5px 0;
+    border-top:1px solid wheat;
+    border-bottom: 1px solid wheat;
+}
+.step2_wrap div.step2 p{
+    margin: 40px;
+    line-height: 30px;
+    color: white;
+}
+.step2_wrap div.step2 .btn{
+    border-radius: 20px;
+    padding: 3px 0px;
+    margin: 0 auto 0px;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #fff;
+    line-height: 28px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.step2_wrap div.step2 .btn:hover{
+    background-color: rgb(139, 52, 36);
+}
