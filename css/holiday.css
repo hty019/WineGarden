@@ -73,6 +73,7 @@ div.menubar ul.nav li {
 
 div.menubar ul.nav li a{
     position: relative;
+    font-family: none;
 }
 div.menubar ul.nav li a::after{
     content: "";
@@ -191,6 +192,7 @@ a{
     color: white;
     font-size: 12pt;
     font-weight: bold;
+    font-family: none;
 }
 
 .subMenu ul li ul li a:hover{
