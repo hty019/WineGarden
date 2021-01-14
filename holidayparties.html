@@ -259,23 +259,6 @@
 
 
     <script>
-        $(".menubar").hover(function () {//메뉴바에 hover발생시 서브메뉴 슬라이드
-            $(".subMenu").stop().slideDown(400);
-        }, function () {
-            $(".subMenu").stop().slideUp(600);
-        });
-        $(".subMenu").hover(function () {
-            $(".subMenu").stop().slideDown(400);
-        }, function () {
-            $(".subMenu").stop().slideUp(600);
-        });
-
-        $(".subMenu ul li ul").hover(function () {//서브메뉴 ul에 hover되면 메뉴바에 빨간 줄 효과 주기
-            num = $(this).get(0).className.substr(3, 1);//hover된 ul의 클래스 넘버 추출
-            $("div.menubar ul.nav li a.menu" + num).toggleClass("linebar");//동일한 넘버의 메뉴바 클래스에 css적용된 클래스 입력
-        });
-
-
         // input 필수입력사항확인후 submit 
         function inputcheck() {
             if (form1.name.value == "") {
@@ -288,14 +271,8 @@
                 form1.email.focus();
                 return false;
             }
-            else return
-            true;
-        }
+            else return true;
 
-        
-    </script>
-
-    <script>
         var slideIndex = 1;
         showSlides(slideIndex);
 
@@ -323,43 +300,11 @@
             dots[slideIndex - 1].className += " active";
         }
 
-        var maxY = window.scrollY;
-    var maxY = $(document).height() - $(window).height();
-
     $("#btn").click(function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     })
-
-    $(window).on("scroll", function () {
-        // 윈도우 스크롤 위치 구하기
-        var strInfo = window.pageYOffset;
-
-        console.log(maxY, strInfo);
-
-        if (strInfo > maxY * 0.1 & strInfo <= maxY * 0.3) {
-            $('#s1').addClass('active');
-            $('#s2').removeClass('active');
-            console.log("1번");
-        } else if (strInfo > maxY * 0.3 && strInfo <= maxY * 0.5) {
-            $('#s1').removeClass('active');
-            $('#s2').addClass('active');
-            $('#s3').removeClass('active');
-            console.log("2번");
-        } else if (strInfo > maxY * 0.5 && strInfo <= maxY * 0.7) {
-            $('#s2').removeClass('active');
-            $('#s3').addClass('active');
-            $('#s4').removeClass('active');
-            console.log("3번");
-        } else if (strInfo > maxY * 0.7 && strInfo <= maxY * 0.9) {
-            $('#s3').removeClass('active');
-            $('#s4').addClass('active');
-            console.log("4번");
-        } else {
-            $('section').removeClass('active');
-        }
-    })
-
     </script>
+    <script src="js/mainMenu.js"></script>
 </body>
 
 </html>
