@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: black;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    ol,
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .header{
+    display: fixed;
+    float: left;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    min-width: 800px;
+    background-color: #2e2925;
+    opacity: 0.97;
+    margin: 0;
+    z-index: 10;/*맨 앞 정렬*/
+    }
+    .header .gnb{
+      width: 800px;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    }
+    /* ##float 해제 코드 */
+    .header .gnb ul.mainMenu:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+    .header .gnb ul.mainMenu li {
+      float: left;
+      padding: 0 50px;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 80px;
+    }
+    .header .gnb ul.mainMenu a {
+      position: relative;
+    }
+    .header .gnb ul.mainMenu a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: red;
+      transform: scaleX(0);
+      transition: 0.3s all ease-out;
+    }
+    .header .gnb li:hover>a::after {
+      transform: scaleX(1);
+    }
+    h1 {
+      float: left;
+    }
+    ul.sideMenu{
+    display: inline-block;
+    position: relative;
+    width: 120px;
+    top: 30%;
+    bottom: 0;
+    /* background-color: red; */
+    padding: 0;
+    list-style: none;
+}
+    ul.sideMenu li {
+    display: inline-block;
+    position: relative;
+    
+    
+}
+
+ul.sideMenu li a{
+    display: block;
+    font-size: 20px; /*이미지 크기 조정*/
+    padding: 0px 5px;
+    width: 23px;
+    height: 30px;
+    border-radius: 50%;
+    transition: 0.5s; /*hover와 연계되어 fade-in/out연출가능*/
+}
+ul.sideMenu > li:nth-child(1):hover > a{ 
+    background-color:#00446e;
+}
+ul.sideMenu > li:nth-child(2):hover > a{ 
+    background-color: #00185B;
+}
+ul.sideMenu > li:nth-child(3):hover > a{
+    background-color:#3F0F00;
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+      <div class="gnb">
+        <h1>
+          <a id="logodefault" href="#">
+              <img src="images/logo.jpg" style="margin-top:-20px;height:79px;">
+          </a>
+        </h1>
+        <ul class="mainMenu">
+          <li><a href="#" class="menu1">ABOUT</a></li>
+          <li><a href="#" class="menu2">PRODUCT</a></li>
+          <li><a href="#" class="menu3">TOUR</a></li>
+          <li><a href="#" class="menu4">OFFERS</a></li>
+        </ul>
+      </div>
+      <ul class="sideMenu">
+        <li><a href="#"><i class="fab fa-twitter"></a></i></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></a></i></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+  </header>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</body>
+
+</html>
