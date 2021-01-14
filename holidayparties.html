@@ -262,8 +262,9 @@
                 form1.email.focus();
                 return false;
             }
-            else return true;
-
+            else return
+            true;
+        }
         var slideIndex = 1;
         showSlides(slideIndex);
 
@@ -291,9 +292,13 @@
             dots[slideIndex - 1].className += " active";
         }
 
+        var maxY = window.scrollY;
+    var maxY = $(document).height() - $(window).height();
+
     $("#btn").click(function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     })
+
     </script>
     <script src="js/mainMenu.js"></script>
 </body>
