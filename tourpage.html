@@ -29,21 +29,17 @@
                 if (strInfo > maxY * 0.1 & strInfo <= maxY * 0.3) {
                     $('#s1').addClass('active');
                     $('#s2').removeClass('active');
-                    console.log("1번");
                 } else if (strInfo > maxY * 0.3 && strInfo <= maxY * 0.5) {
                     $('#s1').removeClass('active');
                     $('#s2').addClass('active');
                     $('#s3').removeClass('active');
-                    console.log("2번");
                 } else if (strInfo > maxY * 0.5 && strInfo <= maxY * 0.7) {
                     $('#s2').removeClass('active');
                     $('#s3').addClass('active');
                     $('#s4').removeClass('active');
-                    console.log("3번");
                 } else if (strInfo > maxY * 0.7 && strInfo <= maxY * 0.9) {
                     $('#s3').removeClass('active');
                     $('#s4').addClass('active');
-                    console.log("4번");
                 } else {
                     $('section').removeClass('active');
                 }
