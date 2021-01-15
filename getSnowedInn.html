@@ -191,9 +191,8 @@
             //     $('.article1 img').css('opacity','0').stop().attr('src',$(this)[0].children[0].getAttribute("src")).animate({opacity:1},500);
             // });
             $('.autoplay div img').click(function (e) { //사용할 수 없게 되어버렸다. 자리를 못찾겠다....
-                e.stopImmediatePropagation();
-                // console.log($(this)[0].getAttribute("src")); 
-                $('.article1 img').css('opacity', '0').stop().attr('src', $(this)[0].getAttribute("src")).animate({ opacity: 1 }, 1000);
+                var source = $(this)[0].getAttribute("src").replace(" - 복사본","");
+                $('.article1 img').css('opacity', '0').stop().attr('src',source).animate({ opacity: 1 }, 1000);
             });
             $('.text button').click(function () {
                 alert("서비스 준비 중입니다.");
